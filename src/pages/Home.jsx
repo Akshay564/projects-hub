@@ -10,6 +10,14 @@ function Home() {
         import("./timer.jsx");
       },
     },
+    {
+      title: "Accordion",
+      description: "A simple accordion to help you manage your tasks.",
+      link: "/accordion",
+      onMouseEnter: () => {
+        import("./Accordion.jsx");
+      },
+    },
   ];
   return (
     <div className="flex flex-col gap-4">
