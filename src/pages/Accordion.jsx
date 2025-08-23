@@ -55,15 +55,17 @@ function Accordion() {
     <div>
       <div className="text-2xl mb-2 font-bold">Facts</div>
       <div className="flex gap-2 mb-2">
-        <input
-          type="checkbox"
-          checked={showMultiple}
-          onChange={(e) => {
-            setShowMultiple(e.target.checked);
-            setOpenIndexes([]);
-          }}
-        />
-        <label>Open Multiple Accordions at a time</label>
+        <label className="flex items-center gap-2">
+          <input
+            type="checkbox"
+            checked={showMultiple}
+            onChange={(e) => {
+              setShowMultiple(e.target.checked);
+              setOpenIndexes([]);
+            }}
+          />
+          Open Multiple Accordions at a time
+        </label>
       </div>
       {facts.map((fact) => {
         return (
@@ -92,7 +94,7 @@ function AccordionCard({ content, title, isOpen, handleAccordion, id }) {
         <div
           className={`${
             isOpen ? "rotate-[-90deg]" : "rotate-[90deg]"
-          } transition-transform`}
+          } transition-transform flex items-center justify-center`}
         >
           ▶
         </div>
@@ -102,7 +104,7 @@ function AccordionCard({ content, title, isOpen, handleAccordion, id }) {
           isOpen ? "mt-2" : "max-h-0"
         }`}
       >
-        {isOpen && <div className="mt-2">{content}</div>}
+        {isOpen && <>{content}</>}
       </div>
     </div>
   );
