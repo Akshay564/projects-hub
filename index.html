@@ -6,8 +6,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite + React</title>
   </head>
+  <style>
+    .loading-pane {
+      align-items: center;
+      justify-content: center;
+      display: flex;
+      padding: 15px;
+      width: 100vw;
+      height: 100vh;
+    }
+    .loader {
+      font-size: 100px;
+      animation: spin 1s linear infinite;
+    }
+    @keyframes spin {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <div class="loading-pane">
+        <!-- <h2 class="loader">🌀</h2> -->
+      </div>
+    </div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

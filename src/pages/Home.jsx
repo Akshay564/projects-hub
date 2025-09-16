@@ -1,4 +1,5 @@
 import Card from "../components/Card";
+import { Timer, Accordion, StarRating } from "../lazyImports.js";
 
 function Home() {
   const cards = [
@@ -6,25 +7,19 @@ function Home() {
       title: "Timer",
       description: "A timer to help you focus on your work.",
       link: "/timer",
-      onMouseEnter: () => {
-        import("./timer.jsx");
-      },
+      onMouseEnter: () => Timer.preload(),
     },
     {
       title: "Accordion",
       description: "A simple accordion to help you manage your tasks.",
       link: "/accordion",
-      onMouseEnter: () => {
-        import("./Accordion.jsx");
-      },
+      onMouseEnter: () => Accordion.preload(),
     },
     {
       title: "Star Rating",
       description: "A simple star rating to help you rate your tasks.",
       link: "/star-rating",
-      onMouseEnter: () => {
-        import("./StarRating.jsx");
-      },
+      onMouseEnter: () => StarRating.preload(),
     },
   ];
   return (
