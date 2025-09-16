@@ -90,11 +90,11 @@ function AccordionCard({ content, title, isOpen, handleAccordion, id }) {
       className="bg-gray-100 p-4 mb-4 rounded-lg cursor-pointer"
     >
       <div className="flex justify-between">
-        <div className="text-lg font-bold">{title}</div>
+        <div className="text-lg font-bold !text-black ">{title}</div>
         <div
           className={`${
             isOpen ? "rotate-[-90deg]" : "rotate-[90deg]"
-          } transition-transform flex items-center justify-center`}
+          } transition-transform flex items-center justify-center !text-black `}
         >
           ▶
         </div>
@@ -104,7 +104,7 @@ function AccordionCard({ content, title, isOpen, handleAccordion, id }) {
           isOpen ? "mt-2" : "max-h-0"
         }`}
       >
-        {isOpen && <>{content}</>}
+        {isOpen && <div className="!text-black">{content}</div>}
       </div>
     </div>
   );

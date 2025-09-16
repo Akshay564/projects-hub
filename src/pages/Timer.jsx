@@ -42,14 +42,14 @@ function Timer() {
         <button
           disabled={isRunning}
           onClick={handleTimer}
-          className="m-2 disabled:opacity-50 disabled:cursor-not-allowed"
+          className="m-2 disabled:opacity-50 disabled:cursor-not-allowed !bg-green-500 text-white"
         >
           Start
         </button>
         <button
           disabled={!isRunning}
           onClick={handleTimer}
-          className="m-2 disabled:opacity-50 disabled:cursor-not-allowed"
+          className="m-2 disabled:opacity-50 disabled:cursor-not-allowed !bg-red-500 text-white"
         >
           Stop
         </button>

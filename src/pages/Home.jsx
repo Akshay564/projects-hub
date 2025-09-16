@@ -18,11 +18,19 @@ function Home() {
         import("./Accordion.jsx");
       },
     },
+    {
+      title: "Star Rating",
+      description: "A simple star rating to help you rate your tasks.",
+      link: "/star-rating",
+      onMouseEnter: () => {
+        import("./StarRating.jsx");
+      },
+    },
   ];
   return (
     <div className="flex flex-col gap-4">
       <div className="flex flex-col gap-2">
-        <h1 className="font-bold text-3xl">Welcome to the Home Page</h1>
+        <h1 className="font-bold text-2xl">Welcome to the Home Page</h1>
         <p className="italic">
           This is a simple home page with a list of cards. Click on a card to
           navigate to the corresponding page.
