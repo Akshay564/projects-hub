@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 function Card({ title, description, link, onMouseEnter }) {
   return (
-    <div className="w-64 h-40 rounded-lg bg-gray-200 p-4 flex flex-col justify-between hover:bg-gray-300 hover:scale-105 transition-all duration-300">
+    <div className="rounded-lg bg-gray-200 p-4 flex flex-col justify-between hover:bg-gray-300 hover:scale-105 transition-all duration-300">
       <Link
         onMouseEnter={onMouseEnter}
         to={link}

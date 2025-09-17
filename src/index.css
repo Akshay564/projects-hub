@@ -4,6 +4,7 @@
 @theme {
   --font-primary: "Outfit", sans-serif;
   --font-star: "system-ui", sans-serif;
+  --color-primary: #646cff;
 }
 
 :root {
@@ -39,7 +40,7 @@
 
 a {
   font-weight: 500;
-  color: #646cff;
+  color: var(--color-primary);
   text-decoration: inherit;
 }
 a:hover {
@@ -61,7 +62,7 @@ button:not(:disabled):hover {
 }
 
 button:not(:disabled):hover {
-  border-color: #646cff;
+  border-color: var(--color-primary);
 }
 button:focus,
 button:focus-visible {

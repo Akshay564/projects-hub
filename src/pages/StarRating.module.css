@@ -4,7 +4,10 @@
   height: 4px;
   background: #ddd;
   border-radius: 2px;
-  background-image: var(--slider-color, linear-gradient(#646cff, #646cff));
+  background-image: var(
+    --slider-color,
+    linear-gradient(var(--color-primary), var(--color-primary))
+  );
   background-size: var(--range-progress) 100%;
   background-repeat: no-repeat;
 }
@@ -15,7 +18,7 @@
   width: 16px;
   height: 16px;
   border-radius: 50%;
-  background: var(--thumb-color, #646cff);
+  background: var(--thumb-color, var(--color-primary));
   cursor: pointer;
   border: none;
 }
@@ -24,7 +27,7 @@
   width: 16px;
   height: 16px;
   border-radius: 50%;
-  background: var(--thumb-color, #646cff);
+  background: var(--thumb-color, var(--color-primary));
   cursor: pointer;
   border: none;
 }

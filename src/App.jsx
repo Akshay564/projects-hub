@@ -1,10 +1,14 @@
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home.jsx";
-import { Suspense } from "react";
+import { lazy, Suspense } from "react";
 import Header from "./components/Header.jsx";
 import Loading from "./components/Loading.jsx";
-import { Timer, Accordion, StarRating } from "./lazyImports.js";
+
+const Timer = lazy(() => import("./pages/timer.jsx"));
+const Accordion = lazy(() => import("./pages/Accordion.jsx"));
+const StarRating = lazy(() => import("./pages/StarRating.jsx"));
+const GuessTheNumber = lazy(() => import("./pages/GuessTheNumber.jsx"));
 
 function App() {
   return (
@@ -38,6 +42,14 @@ function App() {
                 </Suspense>
               }
             />
+            <Route
+              path="/guess-the-number"
+              element={
+                <Suspense fallback={<Loading />}>
+                  <GuessTheNumber />
+                </Suspense>
+              }
+            ></Route>
           </Routes>
         </div>
       </main>

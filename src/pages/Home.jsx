@@ -1,5 +1,4 @@
 import Card from "../components/Card";
-import { Timer, Accordion, StarRating } from "../lazyImports.js";
 
 function Home() {
   const cards = [
@@ -7,23 +6,38 @@ function Home() {
       title: "Timer",
       description: "A timer to help you focus on your work.",
       link: "/timer",
-      onMouseEnter: () => Timer.preload(),
+      onMouseEnter: () => {
+        import("./timer.jsx");
+      },
     },
     {
       title: "Accordion",
       description: "A simple accordion to help you manage your tasks.",
       link: "/accordion",
-      onMouseEnter: () => Accordion.preload(),
+      onMouseEnter: () => {
+        import("./Accordion.jsx");
+      },
     },
+
     {
       title: "Star Rating",
       description: "A simple star rating to help you rate your tasks.",
       link: "/star-rating",
-      onMouseEnter: () => StarRating.preload(),
+      onMouseEnter: () => {
+        import("./StarRating.jsx");
+      },
+    },
+    {
+      title: "Guess The Number",
+      description: "A simple guess the number game.",
+      link: "/guess-the-number",
+      onMouseEnter: () => {
+        import("./GuessTheNumber.jsx");
+      },
     },
   ];
   return (
-    <div className="flex flex-col gap-4">
+    <div className="flex flex-col gap-4 w-8/12 m-auto">
       <div className="flex flex-col gap-2">
         <h1 className="font-bold text-2xl">Welcome to the Home Page</h1>
         <p className="italic">
@@ -31,7 +45,7 @@ function Home() {
           navigate to the corresponding page.
         </p>
       </div>
-      <div className="flex flex-wrap gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {cards.map((card) => (
           <Card onMouseEnter={card.onMouseEnter} key={card.link} {...card} />
         ))}
