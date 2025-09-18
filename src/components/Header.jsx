@@ -28,6 +28,7 @@ export default function Header() {
   }, []);
 
   const currentTitle = routeTitles[location.pathname] || "Mini Projects";
+  const isHome = location.pathname === "/";
 
   return (
     <div className="sticky top-0 z-10 bg-[var(--bg-color)]">
@@ -36,17 +37,26 @@ export default function Header() {
           isScrolled ? "shadow-md" : ""
         } font-bold text-2xl`}
       >
-        <div className="flex-1">
-          <h1 className="w-max cursor-pointer" onClick={() => navigate("/")}>
+        <div
+          className={`${isHome ? "flex-1" : "w-64"} flex ${
+            isHome ? "justify-center" : "justify-start"
+          }`}
+        >
+          <h1
+            className="cursor-pointer hover:opacity-80 transition-opacity"
+            onClick={() => navigate("/")}
+          >
             Mini Projects
           </h1>
         </div>
-        <div className="flex flex-2  justify-center items-center">
-          {location.pathname !== "/" && (
-            <h2 className="text-xl">{currentTitle}</h2>
-          )}
-        </div>
-        <div className="flex-1"></div>
+        {!isHome && (
+          <>
+            <div className="flex-1 flex justify-center">
+              <h2 className="text-xl">{currentTitle}</h2>
+            </div>
+            <div className="w-64"></div>
+          </>
+        )}
       </nav>
     </div>
   );

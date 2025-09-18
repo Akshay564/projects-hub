@@ -1,14 +1,13 @@
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home.jsx";
-import { lazy, Suspense } from "react";
+import { Suspense } from "react";
 import Header from "./components/Header.jsx";
 import Loading from "./components/Loading.jsx";
-
-const Timer = lazy(() => import("./pages/timer.jsx"));
-const Accordion = lazy(() => import("./pages/Accordion.jsx"));
-const StarRating = lazy(() => import("./pages/StarRating.jsx"));
-const GuessTheNumber = lazy(() => import("./pages/GuessTheNumber.jsx"));
+import { Timer } from "./lazyImports.js";
+import { Accordion } from "./lazyImports.js";
+import { StarRating } from "./lazyImports.js";
+import { GuessTheNumber } from "./lazyImports.js";
 
 function App() {
   return (
