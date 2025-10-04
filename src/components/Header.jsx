@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
+import ThemeMenu from "./ThemeMenu";
 
 const routeTitles = {
   "/": "Mini Projects",
@@ -51,12 +52,13 @@ export default function Header() {
         </div>
         {!isHome && (
           <>
-            <div className="flex-1 flex justify-center">
+            <div className="flex-1 flex justify-center items-center">
               <h2 className="text-xl">{currentTitle}</h2>
             </div>
             <div className="w-64"></div>
           </>
         )}
+        <ThemeMenu />
       </nav>
     </div>
   );

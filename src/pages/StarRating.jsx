@@ -94,11 +94,11 @@ export default function StarRating() {
   }, []);
 
   return (
-    <div className="flex gap-10 items-center justify-center max-w-1/2 mx-auto my-10 flex-wrap">
+    <div className="flex gap-20 items-center justify-center mx-auto my-10 flex-wrap">
       <div
         role="radiogroup"
         aria-label="Star rating"
-        className="flex gap-0 flex-3 justify-center font-star"
+        className="flex gap-0  justify-center font-star"
       >
         {[...Array(totalStars)].map((_, index) => {
           const starValue = index + 1;
